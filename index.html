@@ -29,6 +29,37 @@
             margin-bottom: 0;
             padding-bottom: 20px;
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 80%;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -89,13 +120,16 @@
                                 I am also a passioate software developer with interest in ASP.NET, PHP, Python and SQL.
                             </p>
                             <div class="skills-grid">
+                                <div class="skill-tag">HTML</div>
+                                <div class="skill-tag">CSS</div>
                                 <div class="skill-tag">JavaScript</div>
+
                                 <div class="skill-tag">React</div>
                                 <div class="skill-tag">PHP</div>
                                 <div class="skill-tag">Python</div>
                                 <div class="skill-tag">MySQL</div>
                                 <div class="skill-tag">.NET</div>
-                                <div class="skill-tag">SQL</div>
+
                             </div>
                         </div>
                     </div>
@@ -257,23 +291,20 @@
                         <a href="#" class="item-link" onclick="openModal('Poem1.png')">View Articles →</a>
                     </div>
 
-                    <!-- Modal -->
-                    <div id="imageModal" class="modal" onclick="closeModal()">
-                        <span class="close">&times;</span>
-                        <img class="modal-content" id="modalImage">
-                    </div>
+
+
 
                     <div class="card">
                         <img src="Poem2.png" alt="Poetry Image" class="card-image" />
                         <h3>Comfort Zone</h3>
                         <p></p>
-                        <a href="#" class="item-link">View Articles →</a>
+                        <a href="#" class="item-link" onclick="openModal('Poem2.png')">View Articles →</a>
                     </div>
                     <div class="card">
                         <img src="Poem3.png" alt="Poetry Image" class="card-image" />
-                        <h3>Spring with Pollution</h3>
+                        <h3>Spring Tainted with Pollution</h3>
                         <p></p>
-                        <a href="#" class="item-link">View Articles →</a>
+                        <a href="#" class="item-link" onclick="openModal('Poem3.png')">View Articles →</a>
                     </div>
                 </div>
             </div>
@@ -338,6 +369,11 @@
                 </div>
             </div>
         </section>
+        <!-- Modal -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage" alt="Expanded view">
+        </div>
     </main>
 
     <script>
@@ -472,14 +508,16 @@
 
 
         function openModal(imageSrc) {
-            var modal = document.getElementById("imageModal");
-            var modalImg = document.getElementById("modalImage");
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
             modal.style.display = "block";
             modalImg.src = imageSrc;
+            document.body.classList.add('modal-open');
         }
 
         function closeModal() {
             document.getElementById("imageModal").style.display = "none";
+            document.body.classList.remove('modal-open');
         }
 
 
