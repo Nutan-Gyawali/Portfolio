@@ -4,19 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Morgan - Developer & Writer</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Nutan</title>
+    <link rel="icon" href="logo.png" type="image/png">
     <style>
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
 
+        /* Ensure inactive section does not contribute to layout */
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Minimize extra space in contact sections */
+        .contact {
+            margin-bottom: 0;
+            padding-bottom: 20px;
+        }
     </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <div class="logo">Nutan Gyawali</div>
+            <div class="brand">
+                <div class="logo-placeholder">NG</div>
+                <div class="logo">Nutan Gyawali</div>
+            </div>
+
+            <div class="nav-buttons">
+                <a href="#about" class="nav-btn">About</a>
+                <a href="#education" class="nav-btn dev-nav">Education</a>
+                <a href="#books" class="nav-btn writer-nav" style="display: none;">Books</a>
+                <a href="#projects" class="nav-btn dev-nav">Projects</a>
+                <a href="#articles" class="nav-btn writer-nav" style="display: none;">Articles</a>
+                <!-- Updated href to target writer-contact -->
+                <a href="#writer-contact" class="nav-btn writer-nav" style="display: none;">Contact</a>
+                <!-- Updated href to target dev-contact -->
+                <a href="#dev-contact" class="nav-btn dev-nav">Contact</a>
+            </div>
+
             <div class="toggle-container">
-                <span class="toggle-label">Dotnet Developer</span>
+                <span class="toggle-label">Developer</span>
                 <div class="toggle-switch" id="modeToggle">
                     <div class="toggle-slider"></div>
                 </div>
@@ -31,43 +69,61 @@
             <!-- Hero -->
             <div class="hero">
                 <div class="container">
-                    <h1>Web Developer</h1>
-                    <p>I’m a passionate Web Developer focused on building responsive, user-friendly websites and
-                        applications. With experience in HTML, CSS, JavaScript, and modern frameworks like React and
-                        ASP.NET, I turn ideas into interactive digital experiences. Whether it's creating sleek
-                        front-end interfaces or developing robust back-end systems, I enjoy solving problems and
-                        crafting code that makes a difference.</p>
-
+                    <h1>Full-Stack Developer</h1>
+                    <p>I craft digital experiences with clean code and innovative solutions. Passionate about creating
+                        new applications to make a difference.</p>
                     <a href="#projects" class="cta-button">View My Work</a>
                 </div>
             </div>
 
             <!-- About -->
-            <div class="about">
+            <div class="about" id="about">
                 <div class="container">
                     <div class="about-content">
-                        <div class="profile-image">👨‍💻</div>
+                        <div class="profile-image">
+                            <img src="imagedev.jpg" alt="Profile image">
+                        </div>
                         <div>
                             <h2>About Me</h2>
-                            <p>I'm a passionate full-stack developer with hunger for learning new things .I specialize
-                                in Asp.Net Core and PHP. </p>
+                            <p>I'm currently pursuing my bachelors degree in BSc. CSIT from Padmakanya Multiple Campus.
+                                I am also a passioate software developer with interest in ASP.NET, PHP, Python and SQL.
+                            </p>
                             <div class="skills-grid">
                                 <div class="skill-tag">JavaScript</div>
                                 <div class="skill-tag">React</div>
-                                <div class="skill-tag">.Net</div>
+                                <div class="skill-tag">PHP</div>
                                 <div class="skill-tag">Python</div>
-
+                                <div class="skill-tag">MySQL</div>
+                                <div class="skill-tag">.NET</div>
                                 <div class="skill-tag">SQL</div>
-                                <div class="skill-tag">C</div>
-                                <div class="skill-tag">C++</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Education -->
+            <div class="container" id="education">
+                <div class="section-header">
+                    <h2>Education </h2>
+                    <p>My academic background that shaped my development journey.</p>
+                </div>
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>🎓 Bachelor of Computer Science</h3>
+                        <p><strong>Tribhuvan University</strong> <br>• 2023-2026 (Expected)</p>
+                        <p></p>
+                    </div>
+                    <div class="card">
+                        <h3>High School</h3>
+                        <p><strong>Kathmandu Model Secondary School</strong> <br> • 2022</p>
+                        <p> GPA - 3.57</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Projects -->
-            <div class="container">
+            <div class="container" id="projects">
                 <div class="section-header">
                     <h2>Featured Projects</h2>
                     <p>Here are some of my recent projects that showcase my skills and passion for development.</p>
@@ -75,42 +131,45 @@
                 <div class="grid grid-3">
                     <div class="card">
                         <h3>E-Commerce Platform</h3>
-                        <p>The Enchanted Codex is a e-commerce platform made using HTML, CSS ,JavaScript and PHP. It has
-                            admin side and customer side, including user authentication, product management and order
-                            processing. Khalti also has been integrated.</p>
-                        <a href="#" class="item-link">View Project →</a>
+                        <p>The Enchanted Codex is a full-stack E-Commerce solution built with HTML, CSS, JavaScript and
+                            PHP. Features include user authentication, admin side login for editing product and category
+                            details, cart, wishlist and Khalti for payment.</p>
+                        <a href="https://github.com/Nutan-Gyawali/TheEnchantedCodex" class="item-link">View Project
+                            →</a>
                     </div>
                     <div class="card">
                         <h3>Inventory Management System</h3>
-                        <p>It is a Inventory management system made using HTML, CSS ,JavaScript and PHP. </p>
-                        <a href="#" class="item-link">View Project →</a>
+                        <p>A full-stack IMS service built with HTML, CSS, JavaScript and
+                            PHP. Features include user aunthentication, CRUD for stock status, Viewing and downloading
+                            sales report and purchase report history. This can be filtered according to date.</p>
+                        <a href="https://github.com/Nutan-Gyawali/InventoryManagementSystem" class="item-link">View
+                            Project →</a>
                     </div>
                     <div class="card">
                         <h3>Flappy Bird</h3>
-                        <p>It is a fun project I built during my initial days. This a clone of our favourite game Flappy
-                            Bird.</p>
-                        <a href="#" class="item-link">View Project →</a>
+                        <p>Flappy Bird is a fun project I tried out during my initial days of Software Engineering. It
+                            is a clone of our favourite game Flappy Bird.</p>
+                        <a href="https://nutan-gyawali.github.io/flappybird/" class="item-link">View Project →</a>
                     </div>
                     <div class="card">
                         <h3>Candy Crush</h3>
-                        <p>It is also a fun project I built during my initial days. This a clone of our favourite game
-                            Candy Crush
+                        <p>Candy Crush is also a fun project I tried out during my initial days of Software Engineering.
                         </p>
-                        <a href="#" class="item-link">View Project →</a>
+                        <a href="https://nutan-gyawali.github.io/candy-crush/" class="item-link">View Project →</a>
                     </div>
-
                 </div>
             </div>
 
             <!-- Contact -->
-            <div class="contact">
+            <div class="contact" id="dev-contact">
                 <div class="container">
                     <h2>Let's Build Something Together</h2>
                     <p>I'm always interested in new opportunities and collaborations.</p>
                     <div class="contact-links">
-                        <a href="mailto:alex@example.com" class="contact-link">📧 nutangyawali01@gmail.com </a>
-                        <a href="https://github.com/alexmorgan" class="contact-link">🐙 GitHub</a>
-                        <a href="https://linkedin.com/in/alexmorgan" class="contact-link">💼 LinkedIn</a>
+                        <a href="mailto:nutangyawali01@gmail.com" class="contact-link">📧 nutangyawali01@gmail.com</a>
+                        <a href="https://github.com/Nutan-Gyawali" class="contact-link">🐙 GitHub</a>
+                        <a href="https://www.linkedin.com/in/nutan-gyawali-a751482a9/" class="contact-link">💼
+                            LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -118,34 +177,33 @@
 
         <!-- Writer Section -->
         <section id="writer" class="content-section">
-            <!-- Hero -->
-            <div class="hero">
+            <!-- Hero with Background Image -->
+            <div class="hero writer-hero">
                 <div class="container">
                     <h1>Content Writer & Storyteller</h1>
-                    <p>Turn a Page, Shift a Universe <br> Write a Page, Create a universe</p>
+                    <p>Turn a Page, Shift a Universe <br> Write a Page, Create a Universe</p>
                     <a href="#articles" class="cta-button">Read My Work</a>
                 </div>
             </div>
 
             <!-- About -->
-            <div class="about">
+            <div class="about" id="about">
                 <div class="container">
                     <div class="about-content">
-                        <div class="profile-image">✍️</div>
+                        <div class="profile-image">
+                            <img src="imagewri.jpg" alt="Profile image">
+                        </div>
                         <div>
                             <h2>About My Writing</h2>
-                            <p> I weave words into compelling narratives that inform, inspire, and engage. From
-                                technical
-                                documentation to creative storytelling, I bring ideas to life through writing.</p>
+                            <p>I weave words into compelling narratives that inform, inspire, and engage. From technical
+                                documentation to creative storytelling, I bring ideas to life through writing. </p>
                             <div class="skills-grid">
                                 <div class="skill-tag">Technical Writing</div>
-
+                                <div class="skill-tag">Content Writing</div>
                                 <div class="skill-tag">SEO Writing</div>
                                 <div class="skill-tag">Copywriting</div>
                                 <div class="skill-tag">Blog Writing</div>
-                                <div class="skill-tag">Documentation</div>
                                 <div class="skill-tag">Creative Writing</div>
-                                <div class="skill-tag">Editing</div>
                             </div>
                         </div>
                     </div>
@@ -153,35 +211,34 @@
             </div>
 
             <!-- Articles -->
-            <div class="container">
+            <div class="container" id="articles">
                 <div class="section-header">
                     <h2>Featured Articles</h2>
                     <p>A collection of my most popular and impactful pieces across various topics and publications.</p>
                 </div>
                 <div class="grid grid-2">
                     <div class="card">
-                        <h3>The Future of Remote Work</h3>
-                        <p>An in-depth analysis of how remote work is reshaping the modern workplace, featuring insights
-                            from industry leaders and data-driven predictions for the next decade.</p>
-                        <a href="#" class="item-link">Read Article →</a>
+                        <h3>A Trip to Mardi</h3>
+                        <p>A journey from Kathmandu to Mardi Himal Base Camp told in form of words.</p>
+                        <a href="https://nutangyawali.blogspot.com/2025/06/a-trip-to-mardi.html" class="item-link">Read
+                            Article →</a>
                     </div>
                     <div class="card">
-                        <h3>Mastering the Art of Technical Documentation</h3>
-                        <p>A comprehensive guide to creating clear, user-friendly technical documentation that actually
-                            gets read and used by developers and end-users alike.</p>
-                        <a href="#" class="item-link">Read Article →</a>
+                        <h3>He or she should use public transport instead of driving</h3>
+                        <p>An essay written to make people aware of their contribution to air pollution, health
+                            problems, and global warming all in the search of little comfort. It talks about harmful
+                            toxins released from car affecting both the environment and our well-being, and tries to
+                            convince people to switch to public transportation. </p>
+                        <a href="https://nutangyawali.blogspot.com/2021/07/he-or-she-should-use-public-transport.html"
+                            class="item-link">Read Article →</a>
                     </div>
                     <div class="card">
-                        <h3>Building Brand Voice in the Digital Age</h3>
-                        <p>Exploring how companies can develop and maintain a consistent brand voice across all digital
-                            touchpoints, with practical examples and actionable strategies.</p>
-                        <a href="#" class="item-link">Read Article →</a>
-                    </div>
-                    <div class="card">
-                        <h3>The Psychology of Persuasive Writing</h3>
-                        <p>Diving deep into the psychological principles that make writing persuasive and memorable,
-                            with techniques that can be applied to any form of content creation.</p>
-                        <a href="#" class="item-link">Read Article →</a>
+                        <h3>A Strange Dream: A Peak in Simulation</h3>
+                        <p>A horrifying and thrilling experience with sleep paralysis and nightmares. Follow me on a
+                            journey where I was trapped in cycle of false awakenings and shifting realities that made me
+                            believe in the multiverse and left me questioning the very nature of existence. </p>
+                        <a href="https://nutangyawali.blogspot.com/2024/12/a-strange-dream-peak-in-simulation.html"
+                            class="item-link">Read Article →</a>
                     </div>
                 </div>
             </div>
@@ -190,39 +247,93 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Poems</h2>
-                    <p>Writing poems is my favourite thing to do</p>
+                    <p>My favourite way of expressing myself</p>
                 </div>
                 <div class="grid grid-3">
                     <div class="card">
-                        <h3>Tech Weekly Magazine</h3>
-                        <p>Regular contributor covering emerging technologies, startup culture, and digital
-                            transformation trends.</p>
+                        <img src="Poem1.png" alt="Poetry Image" class="card-image" />
+                        <h3>Poetry – A Solace</h3>
+                        <p></p>
+                        <a href="#" class="item-link" onclick="openModal('Poem1.png')">View Articles →</a>
+                    </div>
+
+                    <!-- Modal -->
+                    <div id="imageModal" class="modal" onclick="closeModal()">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="modalImage">
+                    </div>
+
+                    <div class="card">
+                        <img src="Poem2.png" alt="Poetry Image" class="card-image" />
+                        <h3>Comfort Zone</h3>
+                        <p></p>
                         <a href="#" class="item-link">View Articles →</a>
                     </div>
                     <div class="card">
-                        <h3>Content Marketing Institute</h3>
-                        <p>Featured writer focusing on content strategy, SEO best practices, and audience engagement
-                            techniques.</p>
-                        <a href="#" class="item-link">View Articles →</a>
-                    </div>
-                    <div class="card">
-                        <h3>Developer's Digest</h3>
-                        <p>Technical writing specialist creating documentation, tutorials, and guides for developer
-                            communities.</p>
+                        <img src="Poem3.png" alt="Poetry Image" class="card-image" />
+                        <h3>Spring with Pollution</h3>
+                        <p></p>
                         <a href="#" class="item-link">View Articles →</a>
                     </div>
                 </div>
             </div>
 
+            <!-- Favourite Books -->
+            <div class="container" id="books">
+                <div class="section-header">
+                    <h2>Favourite Books</h2>
+                    <p>Books that have inspired my writing journey and shaped my perspective on storytelling and
+                        communication.</p>
+                </div>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>📚 "A Thousand Splendid Suns" by Khaled Hosseini</h3>
+                        <p><strong>Genre:</strong> Historical Fiction</p>
+                        <p>A powerful and emotional novel that follows the lives of two Afghan women, Mariam and Laila,
+                            whose paths cross amid war, loss, and oppression. Bound by hardship and resilience, their
+                            friendship becomes a source of strength and hope.</p>
+                    </div>
+                    <div class="card">
+                        <h3>📖 "The Hunger Games" by Suzanne Collins</h3>
+                        <p><strong>Genre:</strong> Dystopian Fiction</p>
+                        <p>A gripping story set in a future where the government forces children to fight to the death
+                            in a televised event. Katniss Everdeen volunteers to save her sister and becomes a symbol of
+                            resistance. Themes include survival, sacrifice, and rebellion.</p>
+                    </div>
+                    <div class="card">
+                        <h3>📝 "As Long as the Lemon Trees Grow" by Zoulfa Katouh</h3>
+                        <p><strong>Genre:</strong> Contemporary Fiction / War Drama</p>
+                        <p>Set during the Syrian revolution, this novel follows Salama, a pharmacy student turned
+                            hospital volunteer, as she struggles between duty and escape. A powerful story of hope,
+                            love, and survival amid conflict.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🎭 "Seto Dharti" by Amar Neupane</h3>
+                        <p><strong>Genre:</strong> Literary Fiction / Social Commentary</p>
+                        <p>This poignant Nepali novel tells the story of Tara, a child widow navigating a lifetime of
+                            solitude and societal neglect. It’s a moving critique of tradition, child marriage, and the
+                            silencing of women.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🧠 "My Dark Vanessa" by Kate Elizabeth Russell</h3>
+                        <p><strong>Genre:</strong> Psychological Fiction</p>
+                        <p>A haunting exploration of a grooming relationship and its lasting effects. Vanessa reflects
+                            on her past with her teacher as new allegations emerge, forcing her to confront
+                            manipulation, trauma, and the complexities of consent.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Contact -->
-            <div class="contact">
+            <div class="contact" id="writer-contact">
                 <div class="container">
-                    <h2>Connect With Mw</h2>
-                    <p>Lets have a cup of coffee and write together</p>
+                    <h2>Let's Tell A Story Together</h2>
+                    <p>Shall we brew some coffee and create something beautiful?</p>
                     <div class="contact-links">
                         <a href="mailto:nutangyawali01@gmail.com" class="contact-link">📧 nutangyawali01@gmail.com</a>
-                        <a href="https://medium.com/@alexmorgan" class="contact-link">📝 Blogs</a>
-                        <a href="https://twitter.com/alexmorgan" class="contact-link">🐦 Fable</a>
+                        <a href="https://nutangyawali.blogspot.com/" class="contact-link">📝 Blog</a>
+                        <a href="https://www.goodreads.com/user/show/149063758-nutan-gyawali" class="contact-link">📖
+                            Goodreads</a>
                     </div>
                 </div>
             </div>
@@ -235,6 +346,17 @@
         const developerSection = document.getElementById('developer');
         const writerSection = document.getElementById('writer');
         const body = document.body;
+        const devNavButtons = document.querySelectorAll('.dev-nav');
+        const writerNavButtons = document.querySelectorAll('.writer-nav');
+
+        function updateNavigation(isWriter) {
+            devNavButtons.forEach(btn => {
+                btn.style.display = isWriter ? 'none' : 'inline-block';
+            });
+            writerNavButtons.forEach(btn => {
+                btn.style.display = isWriter ? 'inline-block' : 'none';
+            });
+        }
 
         toggle.addEventListener('click', function () {
             // Toggle the switch visual state
@@ -246,19 +368,40 @@
                 developerSection.classList.remove('active');
                 writerSection.classList.add('active');
                 body.classList.add('writer-theme');
+                updateNavigation(true);
             } else {
                 // Show developer section and apply dark theme
                 writerSection.classList.remove('active');
                 developerSection.classList.add('active');
                 body.classList.remove('writer-theme');
+                updateNavigation(false);
             }
         });
+
+        // Initialize navigation
+        updateNavigation(false);
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const targetId = this.getAttribute('href').substring(1); // Remove #
+                const isWriterMode = writerSection.classList.contains('active');
+                let target;
+
+                // Determine the correct target based on mode
+                if (targetId === 'about') {
+                    // Handle shared about ID by selecting within active section
+                    target = document.querySelector(`.content-section.active #${targetId}`);
+                } else if (targetId === 'dev-contact' && !isWriterMode) {
+                    target = document.getElementById('dev-contact');
+                } else if (targetId === 'writer-contact' && isWriterMode) {
+                    target = document.getElementById('writer-contact');
+                } else {
+                    // For other IDs, select within active section
+                    target = document.querySelector(`.content-section.active #${targetId}`);
+                }
+
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
@@ -326,6 +469,20 @@
                 }
             }, 300);
         });
+
+
+        function openModal(imageSrc) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+
     </script>
 </body>
 

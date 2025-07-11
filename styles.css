@@ -94,12 +94,66 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    gap: 2rem;
 }
+
+/* Logo and Brand */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-placeholder {
+
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.logo-placeholder img {
+    width: 100px;
+    /* Adjust as needed */
+    height: auto;
+}
+
 
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+}
+
+.nav-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 /* Toggle Switch */
@@ -112,6 +166,7 @@ nav {
 .toggle-label {
     font-weight: 500;
     color: var(--text-secondary);
+    font-size: 0.875rem;
 }
 
 .toggle-switch {
@@ -171,6 +226,41 @@ main {
     padding: 4rem 0;
     text-align: center;
     background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Writer Hero Background Image */
+.writer-hero {
+    background-image: url('book.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.writer-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(174, 133, 154, 0.6) 100%);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* dark overlay */
+    z-index: 1;
+}
+
+.writer-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.writer-hero h1,
+.writer-hero p {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
@@ -181,6 +271,11 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.writer-hero h1 {
+    background: none;
+    -webkit-text-fill-color: white;
 }
 
 .hero p {
@@ -307,18 +402,26 @@ main {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
-    color: white;
     margin: 0 auto;
+    overflow: hidden;
+    /* ensures image stays within the circle */
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* similar to background-size: cover */
+    object-position: center;
 }
 
 /* Contact Section */
 .contact {
-    padding: 4rem 0;
+    padding: 4rem 0 2rem 0;
+    /* Reduced bottom padding */
     text-align: center;
 }
 
@@ -343,6 +446,12 @@ main {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-buttons {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
@@ -364,11 +473,21 @@ main {
 
     nav {
         padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .brand {
+        order: 1;
     }
 
     .toggle-container {
-        flex-direction: column;
+        order: 2;
         gap: 0.5rem;
+    }
+
+    .toggle-label {
+        font-size: 0.75rem;
     }
 }
 
@@ -392,7 +511,7 @@ main {
 }
 
 /* Theme-specific enhancements */
-.writer-theme .hero {
+.writer-theme .hero:not(.writer-hero) {
     background: linear-gradient(135deg, var(--bg-secondary) 0%, #ede9fe 50%, var(--bg-primary) 100%);
 }
 
@@ -426,4 +545,78 @@ body:not(.writer-theme) .profile-image {
 .writer-theme .profile-image {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+/* Education and Books specific styling */
+.card h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Writer theme book cards enhancement */
+.writer-theme .card {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #f8fafc 100%);
+    border: 1px solid var(--border-color);
+}
+
+.writer-theme .card:hover {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #f1f5f9 100%);
+    border-color: var(--primary-color);
+}
+
+/* Developer theme education cards enhancement */
+body:not(.writer-theme) .card {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #0f172a 100%);
+    border: 1px solid var(--border-color);
+}
+
+body:not(.writer-theme) .card:hover {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #1e293b 100%);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+/* Remove extra spacing */
+.content-section>*:last-child {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* black background with opacity */
+    text-align: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
 }
