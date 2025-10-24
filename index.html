@@ -60,6 +60,105 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        .experience-card {
+            position: relative;
+            padding: 25px;
+            border-left: 4px solid #6366f1;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .experience-title {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .experience-title h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.3em;
+            color: #6366f1;
+        }
+
+        .experience-company {
+            font-weight: 600;
+            /* color: #8b5cf6; */
+            color: #6366f1;
+
+            font-size: 1.1em;
+        }
+
+        .experience-date {
+            background: rgba(99, 102, 241, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #6366f1;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            margin-top: 15px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .experience-highlights {
+            margin-top: 15px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .experience-highlights li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .experience-highlights li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #6366f1;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .experience-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .experience-skill-tag {
+            background: rgba(99, 102, 241, 0.15);
+            color: #6366f1;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .experience-date {
+                align-self: flex-start;
+            }
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -117,16 +216,16 @@
                         <div>
                             <h2>About Me</h2>
                             <p>I'm currently pursuing my bachelors degree in BSc. CSIT from Padmakanya Multiple Campus.
-                                I am also a passioate software developer with interest in ASP.NET, PHP, Python and SQL.
+                                I am also a full-stack ASP.NET core developer with a passion also in machine learning.
                             </p>
                             <div class="skills-grid">
                                 <div class="skill-tag">HTML</div>
                                 <div class="skill-tag">CSS</div>
                                 <div class="skill-tag">JavaScript</div>
 
-                                <div class="skill-tag">React</div>
+                                <div class="skill-tag">Blazor</div>
                                 <div class="skill-tag">PHP</div>
-                                <div class="skill-tag">Python</div>
+
                                 <div class="skill-tag">MySQL</div>
                                 <div class="skill-tag">.NET</div>
 
@@ -136,6 +235,49 @@
                 </div>
             </div>
 
+            <!-- HTML Structure - Replace your Experience section with this -->
+            <!-- <div class="container" id="experience">
+                <div class="section-header">
+                    <h2>Professional Experience</h2>
+                    <p>My journey in the software development industry and the skills I've developed along the way.</p>
+                </div>
+                <div class="grid grid-1">
+                    <div class="card experience-card">
+                        <div class="experience-header">
+                            <div class="experience-title">
+                                <h3>Full-Stack ASP.NET Intern</h3>
+                                <div class="experience-company">Uranus Tech</div>
+                            </div>
+                            <div class="experience-date">August 2024 - Present</div>
+                        </div>
+                        <div class="experience-description">
+                            <p>Working as a full-stack intern at Uranus Tech, where I contribute to developing scalable
+                                web applications using ASP.NET Core framework.</p>
+                        </div>
+                        <ul class="experience-highlights">
+
+                             <li>Collaborating with senior developers to implement new features and optimize existing
+                                functionality for better performance</li>
+                            <li>Participating in code reviews and learning industry best practices for writing clean,
+                                maintainable, and scalable code</li>
+                            <li>Working with databases to design schemas, write efficient queries, and implement data
+                                access layers</li>
+                            <li>Gaining hands-on experience with version control systems, agile methodologies, and team
+                                collaboration tools</li> -->
+            <!-- </ul>
+                        <div class="experience-skills">
+                            <span class="experience-skill-tag">ASP.NET Core</span>
+                            <span class="experience-skill-tag">C#</span>
+                            <span class="experience-skill-tag">Entity Framework</span>
+                            <span class="experience-skill-tag">SQL Server</span>
+                            <span class="experience-skill-tag">Blazor</span>
+                            <span class="experience-skill-tag">REST APIs</span>
+                            <span class="experience-skill-tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>  -->
+
             <!-- Education -->
             <div class="container" id="education">
                 <div class="section-header">
@@ -144,7 +286,7 @@
                 </div>
                 <div class="grid grid-2">
                     <div class="card">
-                        <h3>🎓 Bachelor of Computer Science</h3>
+                        <h3>🎓 Bachelors of Computer Science and Information Technology</h3>
                         <p><strong>Tribhuvan University</strong> <br>• 2023-2026 (Expected)</p>
                         <p></p>
                     </div>
