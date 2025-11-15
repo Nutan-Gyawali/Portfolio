@@ -90,9 +90,7 @@
 
         .experience-company {
             font-weight: 600;
-            /* color: #8b5cf6; */
             color: #6366f1;
-
             font-size: 1.1em;
         }
 
@@ -159,6 +157,140 @@
                 align-self: flex-start;
             }
         }
+
+        /* Universal Carousel Styles */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .carousel-wrapper {
+            display: flex;
+            gap: 30px;
+            transition: transform 0.5s ease;
+            padding: 0 10px;
+        }
+
+        .carousel-card {
+            min-width: 350px;
+            flex: 0 0 350px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .carousel-card h3 {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel-card p {
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+
+        .carousel-card .item-link {
+            margin-top: auto;
+        }
+
+        .carousel-card .card-image {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            align-items: center;
+        }
+
+        .carousel-btn {
+            background: rgba(99, 102, 241, 0.1);
+            border: 2px solid #6366f1;
+            color: #6366f1;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: #6366f1;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .carousel-btn:disabled:hover {
+            background: rgba(99, 102, 241, 0.1);
+            color: #6366f1;
+            transform: scale(1);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            gap: 8px;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background: #6366f1;
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        /* Writer theme carousel styles */
+        .writer-theme .carousel-btn {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: #8b5cf6;
+            color: #8b5cf6;
+        }
+
+        .writer-theme .carousel-btn:hover {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .writer-theme .carousel-btn:disabled:hover {
+            background: rgba(139, 92, 246, 0.1);
+            color: #8b5cf6;
+        }
+
+        .writer-theme .carousel-dot {
+            background: rgba(139, 92, 246, 0.3);
+        }
+
+        .writer-theme .carousel-dot.active {
+            background: #8b5cf6;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-card {
+                min-width: 280px;
+                flex: 0 0 280px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -167,7 +299,6 @@
     <header>
         <nav>
             <div class="brand">
-                <!-- <div class="logo-placeholder">NG</div> -->
                 <div class="logo">Nutan Gyawali</div>
             </div>
 
@@ -177,9 +308,7 @@
                 <a href="#books" class="nav-btn writer-nav" style="display: none;">Books</a>
                 <a href="#projects" class="nav-btn dev-nav">Projects</a>
                 <a href="#articles" class="nav-btn writer-nav" style="display: none;">Articles</a>
-                <!-- Updated href to target writer-contact -->
                 <a href="#writer-contact" class="nav-btn writer-nav" style="display: none;">Contact</a>
-                <!-- Updated href to target dev-contact -->
                 <a href="#dev-contact" class="nav-btn dev-nav">Contact</a>
             </div>
 
@@ -222,21 +351,18 @@
                                 <div class="skill-tag">HTML</div>
                                 <div class="skill-tag">CSS</div>
                                 <div class="skill-tag">JavaScript</div>
-
                                 <div class="skill-tag">Blazor</div>
                                 <div class="skill-tag">PHP</div>
-
                                 <div class="skill-tag">MySQL</div>
                                 <div class="skill-tag">.NET</div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- HTML Structure - Replace your Experience section with this -->
-            <!-- <div class="container" id="experience">
+            <!-- Experience -->
+            <div class="container" id="experience">
                 <div class="section-header">
                     <h2>Professional Experience</h2>
                     <p>My journey in the software development industry and the skills I've developed along the way.</p>
@@ -255,20 +381,19 @@
                                 web applications using ASP.NET Core framework.</p>
                         </div>
                         <ul class="experience-highlights">
-
-                             <li>Collaborating with senior developers to implement new features and optimize existing
+                            <li>Collaborating with senior developers to implement new features and optimize existing
                                 functionality for better performance</li>
                             <li>Participating in code reviews and learning industry best practices for writing clean,
                                 maintainable, and scalable code</li>
                             <li>Working with databases to design schemas, write efficient queries, and implement data
                                 access layers</li>
                             <li>Gaining hands-on experience with version control systems, agile methodologies, and team
-                                collaboration tools</li> -->
-            <!-- </ul>
+                                collaboration tools</li>
+                        </ul>
                         <div class="experience-skills">
                             <span class="experience-skill-tag">ASP.NET Core</span>
                             <span class="experience-skill-tag">C#</span>
-                            <span class="experience-skill-tag">Entity Framework</span>
+                            <span class="experience-skill-tag">Dapper</span>
                             <span class="experience-skill-tag">SQL Server</span>
                             <span class="experience-skill-tag">Blazor</span>
                             <span class="experience-skill-tag">REST APIs</span>
@@ -276,7 +401,7 @@
                         </div>
                     </div>
                 </div>
-            </div>  -->
+            </div>
 
             <!-- Education -->
             <div class="container" id="education">
@@ -304,34 +429,61 @@
                     <h2>Featured Projects</h2>
                     <p>Here are some of my recent projects that showcase my skills and passion for development.</p>
                 </div>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>E-Commerce Platform</h3>
-                        <p>The Enchanted Codex is a full-stack E-Commerce solution built with HTML, CSS, JavaScript and
-                            PHP. Features include user authentication, admin side login for editing product and category
-                            details, cart, wishlist and Khalti for payment.</p>
-                        <a href="https://github.com/Nutan-Gyawali/TheEnchantedCodex" class="item-link">View Project
-                            →</a>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper" id="projectsCarousel">
+                        <div class="card carousel-card">
+                            <h3>AgroConnect - An Agriculture Marketplace</h3>
+                            <p>AgroConnect is a full-stack E-Commerce solution built with React.js,Typescript and
+                                ASP.Net Core. Features include user authentication, farmer side and business side login
+                                Direct communication is enabled
+                                through
+                                in-built chat system. SignalR is used to display real time bid updates in auction and
+                                chat
+                                messages.Chat is secured using AES-GCM algorithm.</p>
+                            <a href="https://github.com/Nutan-Gyawali/TheEnchantedCodex" class="item-link">View Project
+                                →</a>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>The Enchanted Codex</h3>
+                            <p>The Enchanted Codex is a full-stack E-Commerce solution built with HTML, CSS, JavaScript
+                                and
+                                PHP. Features include user authentication, admin side login for editing product and
+                                category
+                                details, cart, wishlist and Khalti for payment.</p>
+                            <br><br>
+                            <a href="https://github.com/Nutan-Gyawali/TheEnchantedCodex" class="item-link">View Project
+                                →</a>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>Inventory Management System</h3>
+                            <p>A full-stack IMS service built with HTML, CSS, JavaScript and
+                                PHP. Features include user aunthentication, CRUD for stock status, Viewing and
+                                downloading
+                                sales report and purchase report history. This can be filtered according to date.</p>
+                            <br><br>
+                            <a href="https://github.com/Nutan-Gyawali/InventoryManagementSystem" class="item-link">View
+                                Project →</a>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>Flappy Bird</h3>
+                            <p>Flappy Bird is a fun project I tried out during my initial days of Software Engineering.
+                                It
+                                is a clone of our favourite game Flappy Bird.</p>
+                            <br><br><br><br><br>
+                            <a href="https://nutan-gyawali.github.io/flappybird/" class="item-link">View Project →</a>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>Candy Crush</h3>
+                            <p>Candy Crush is also a fun project I tried out during my initial days of Software
+                                Engineering.
+                            </p><br><br><br><br><br>`
+                            <a href="https://nutan-gyawali.github.io/candy-crush/" class="item-link">View Project →</a>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>Inventory Management System</h3>
-                        <p>A full-stack IMS service built with HTML, CSS, JavaScript and
-                            PHP. Features include user aunthentication, CRUD for stock status, Viewing and downloading
-                            sales report and purchase report history. This can be filtered according to date.</p>
-                        <a href="https://github.com/Nutan-Gyawali/InventoryManagementSystem" class="item-link">View
-                            Project →</a>
-                    </div>
-                    <div class="card">
-                        <h3>Flappy Bird</h3>
-                        <p>Flappy Bird is a fun project I tried out during my initial days of Software Engineering. It
-                            is a clone of our favourite game Flappy Bird.</p>
-                        <a href="https://nutan-gyawali.github.io/flappybird/" class="item-link">View Project →</a>
-                    </div>
-                    <div class="card">
-                        <h3>Candy Crush</h3>
-                        <p>Candy Crush is also a fun project I tried out during my initial days of Software Engineering.
-                        </p>
-                        <a href="https://nutan-gyawali.github.io/candy-crush/" class="item-link">View Project →</a>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="projectsPrev">‹</button>
+                        <div class="carousel-indicators" id="projectsIndicators"></div>
+                        <button class="carousel-btn" id="projectsNext">›</button>
                     </div>
                 </div>
             </div>
@@ -392,62 +544,80 @@
                     <h2>Featured Articles</h2>
                     <p>A collection of my most popular and impactful pieces across various topics and publications.</p>
                 </div>
-                <div class="grid grid-2">
-                    <div class="card">
-                        <h3>A Trip to Mardi</h3>
-                        <p>A journey from Kathmandu to Mardi Himal Base Camp told in form of words.</p>
-                        <a href="https://nutangyawali.blogspot.com/2025/06/a-trip-to-mardi.html" class="item-link">Read
-                            Article →</a>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper" id="articlesCarousel">
+                        <div class="card carousel-card">
+                            <h3>A Trip to Mardi</h3>
+                            <p>A journey from Kathmandu to Mardi Himal Base Camp told in form of words.</p>
+                            <br>
+                            <br><br><br><br><br>
+
+                            <a href="https://nutangyawali.blogspot.com/2025/06/a-trip-to-mardi.html"
+                                class="item-link">Read
+                                Article →</a>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>He or she should use public transport instead of driving</h3>
+                            <p>An essay written to make people aware of their contribution to air pollution, health
+                                problems, and global warming all in the search of little comfort. It talks about harmful
+                                toxins released from car affecting both the environment and our well-being, and tries to
+                                convince people to switch to public transportation. </p>
+                            <a href="https://nutangyawali.blogspot.com/2021/07/he-or-she-should-use-public-transport.html"
+                                class="item-link">Read Article →</a>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>A Strange Dream: A Peak in Simulation</h3>
+                            <p>A horrifying and thrilling experience with sleep paralysis and nightmares. Follow me on a
+                                journey where I was trapped in cycle of false awakenings and shifting realities that
+                                made me
+                                believe in the multiverse and left me questioning the very nature of existence. </p>
+                            <a href="https://nutangyawali.blogspot.com/2024/12/a-strange-dream-peak-in-simulation.html"
+                                class="item-link">Read Article →</a>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>He or she should use public transport instead of driving</h3>
-                        <p>An essay written to make people aware of their contribution to air pollution, health
-                            problems, and global warming all in the search of little comfort. It talks about harmful
-                            toxins released from car affecting both the environment and our well-being, and tries to
-                            convince people to switch to public transportation. </p>
-                        <a href="https://nutangyawali.blogspot.com/2021/07/he-or-she-should-use-public-transport.html"
-                            class="item-link">Read Article →</a>
-                    </div>
-                    <div class="card">
-                        <h3>A Strange Dream: A Peak in Simulation</h3>
-                        <p>A horrifying and thrilling experience with sleep paralysis and nightmares. Follow me on a
-                            journey where I was trapped in cycle of false awakenings and shifting realities that made me
-                            believe in the multiverse and left me questioning the very nature of existence. </p>
-                        <a href="https://nutangyawali.blogspot.com/2024/12/a-strange-dream-peak-in-simulation.html"
-                            class="item-link">Read Article →</a>
-                    </div>
+                    <!-- <div class="carousel-controls">
+                        <button class="carousel-btn" id="articlesPrev">‹</button>
+                        <div class="carousel-indicators" id="articlesIndicators"></div>
+                        <button class="carousel-btn" id="articlesNext">›</button>
+                    </div> -->
                 </div>
             </div>
 
-            <!-- Publications -->
+            <!-- Poems -->
             <div class="container">
                 <div class="section-header">
                     <h2>Poems</h2>
                     <p>My favourite way of expressing myself</p>
                 </div>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <img src="Poem1.png" alt="Poetry Image" class="card-image" />
-                        <h3>Poetry – A Solace</h3>
-                        <p></p>
-                        <a href="#" class="item-link" onclick="openModal('Poem1.png')">View Articles →</a>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper" id="poemsCarousel">
+                        <div class="card carousel-card">
+                            <img src="Poem1.png" alt="Poetry Image" class="card-image" />
+                            <h3>Poetry – A Solace</h3>
+                            <p></p>
+                            <a href="#" class="item-link" onclick="openModal('Poem1.png'); return false;">View Poem
+                                →</a>
+                        </div>
+                        <div class="card carousel-card">
+                            <img src="Poem2.png" alt="Poetry Image" class="card-image" />
+                            <h3>Comfort Zone</h3>
+                            <p></p>
+                            <a href="#" class="item-link" onclick="openModal('Poem2.png'); return false;">View Poem
+                                →</a>
+                        </div>
+                        <div class="card carousel-card">
+                            <img src="Poem3.png" alt="Poetry Image" class="card-image" />
+                            <h3>Spring Tainted with Pollution</h3>
+                            <p></p>
+                            <!-- <a href="#" class="item-link" onclick="openModal('Poem3.png'); return false;">View Poem
+                                →</a> -->
+                        </div>
                     </div>
-
-
-
-
-                    <div class="card">
-                        <img src="Poem2.png" alt="Poetry Image" class="card-image" />
-                        <h3>Comfort Zone</h3>
-                        <p></p>
-                        <a href="#" class="item-link" onclick="openModal('Poem2.png')">View Articles →</a>
-                    </div>
-                    <div class="card">
-                        <img src="Poem3.png" alt="Poetry Image" class="card-image" />
-                        <h3>Spring Tainted with Pollution</h3>
-                        <p></p>
-                        <a href="#" class="item-link" onclick="openModal('Poem3.png')">View Articles →</a>
-                    </div>
+                    <!-- <div class="carousel-controls">
+                        <button class="carousel-btn" id="poemsPrev">‹</button>
+                        <div class="carousel-indicators" id="poemsIndicators"></div>
+                        <button class="carousel-btn" id="poemsNext">›</button>
+                    </div> -->
                 </div>
             </div>
 
@@ -458,41 +628,55 @@
                     <p>Books that have inspired my writing journey and shaped my perspective on storytelling and
                         communication.</p>
                 </div>
-                <div class="grid grid-3">
-                    <div class="card">
-                        <h3>📚 "A Thousand Splendid Suns" by Khaled Hosseini</h3>
-                        <p><strong>Genre:</strong> Historical Fiction</p>
-                        <p>A powerful and emotional novel that follows the lives of two Afghan women, Mariam and Laila,
-                            whose paths cross amid war, loss, and oppression. Bound by hardship and resilience, their
-                            friendship becomes a source of strength and hope.</p>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper" id="booksCarousel">
+                        <div class="card carousel-card">
+                            <h3>📚 "A Thousand Splendid Suns" by Khaled Hosseini</h3>
+                            <p><strong>Genre:</strong> Historical Fiction</p>
+                            <p>A powerful and emotional novel that follows the lives of two Afghan women, Mariam and
+                                Laila,
+                                whose paths cross amid war, loss, and oppression. Bound by hardship and resilience,
+                                their
+                                friendship becomes a source of strength and hope.</p>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>📖 "The Hunger Games" by Suzanne Collins</h3>
+                            <p><strong>Genre:</strong> Dystopian Fiction</p>
+                            <p>A gripping story set in a future where the government forces children to fight to the
+                                death
+                                in a televised event. Katniss Everdeen volunteers to save her sister and becomes a
+                                symbol of
+                                resistance. Themes include survival, sacrifice, and rebellion.</p>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>📝 "As Long as the Lemon Trees Grow" by Zoulfa Katouh</h3>
+                            <p><strong>Genre:</strong> Contemporary Fiction / War Drama</p>
+                            <p>Set during the Syrian revolution, this novel follows Salama, a pharmacy student turned
+                                hospital volunteer, as she struggles between duty and escape. A powerful story of hope,
+                                love, and survival amid conflict.</p>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>🎭 "Seto Dharti" by Amar Neupane</h3>
+                            <p><strong>Genre:</strong> Literary Fiction / Social Commentary</p>
+                            <p>This poignant Nepali novel tells the story of Tara, a child widow navigating a lifetime
+                                of
+                                solitude and societal neglect. It's a moving critique of tradition, child marriage, and
+                                the
+                                silencing of women.</p>
+                        </div>
+                        <div class="card carousel-card">
+                            <h3>🧠 "My Dark Vanessa" by Kate Elizabeth Russell</h3>
+                            <p><strong>Genre:</strong> Psychological Fiction</p>
+                            <p>A haunting exploration of a grooming relationship and its lasting effects. Vanessa
+                                reflects
+                                on her past with her teacher as new allegations emerge, forcing her to confront
+                                manipulation, trauma, and the complexities of consent.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>📖 "The Hunger Games" by Suzanne Collins</h3>
-                        <p><strong>Genre:</strong> Dystopian Fiction</p>
-                        <p>A gripping story set in a future where the government forces children to fight to the death
-                            in a televised event. Katniss Everdeen volunteers to save her sister and becomes a symbol of
-                            resistance. Themes include survival, sacrifice, and rebellion.</p>
-                    </div>
-                    <div class="card">
-                        <h3>📝 "As Long as the Lemon Trees Grow" by Zoulfa Katouh</h3>
-                        <p><strong>Genre:</strong> Contemporary Fiction / War Drama</p>
-                        <p>Set during the Syrian revolution, this novel follows Salama, a pharmacy student turned
-                            hospital volunteer, as she struggles between duty and escape. A powerful story of hope,
-                            love, and survival amid conflict.</p>
-                    </div>
-                    <div class="card">
-                        <h3>🎭 "Seto Dharti" by Amar Neupane</h3>
-                        <p><strong>Genre:</strong> Literary Fiction / Social Commentary</p>
-                        <p>This poignant Nepali novel tells the story of Tara, a child widow navigating a lifetime of
-                            solitude and societal neglect. It’s a moving critique of tradition, child marriage, and the
-                            silencing of women.</p>
-                    </div>
-                    <div class="card">
-                        <h3>🧠 "My Dark Vanessa" by Kate Elizabeth Russell</h3>
-                        <p><strong>Genre:</strong> Psychological Fiction</p>
-                        <p>A haunting exploration of a grooming relationship and its lasting effects. Vanessa reflects
-                            on her past with her teacher as new allegations emerge, forcing her to confront
-                            manipulation, trauma, and the complexities of consent.</p>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="booksPrev">‹</button>
+                        <div class="carousel-indicators" id="booksIndicators"></div>
+                        <button class="carousel-btn" id="booksNext">›</button>
                     </div>
                 </div>
             </div>
@@ -537,18 +721,14 @@
         }
 
         toggle.addEventListener('click', function () {
-            // Toggle the switch visual state
             this.classList.toggle('active');
 
-            // Toggle content sections and themes
             if (this.classList.contains('active')) {
-                // Show writer section and apply lavender theme
                 developerSection.classList.remove('active');
                 writerSection.classList.add('active');
                 body.classList.add('writer-theme');
                 updateNavigation(true);
             } else {
-                // Show developer section and apply dark theme
                 writerSection.classList.remove('active');
                 developerSection.classList.add('active');
                 body.classList.remove('writer-theme');
@@ -556,27 +736,23 @@
             }
         });
 
-        // Initialize navigation
         updateNavigation(false);
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1); // Remove #
+                const targetId = this.getAttribute('href').substring(1);
                 const isWriterMode = writerSection.classList.contains('active');
                 let target;
 
-                // Determine the correct target based on mode
                 if (targetId === 'about') {
-                    // Handle shared about ID by selecting within active section
                     target = document.querySelector(`.content-section.active #${targetId}`);
                 } else if (targetId === 'dev-contact' && !isWriterMode) {
                     target = document.getElementById('dev-contact');
                 } else if (targetId === 'writer-contact' && isWriterMode) {
                     target = document.getElementById('writer-contact');
                 } else {
-                    // For other IDs, select within active section
                     target = document.querySelector(`.content-section.active #${targetId}`);
                 }
 
@@ -612,7 +788,7 @@
             observer.observe(card);
         });
 
-        // Add typing effect to hero titles (optional enhancement)
+        // Add typing effect to hero titles
         function typeWriter(element, text, speed = 100) {
             let i = 0;
             element.innerHTML = '';
@@ -648,7 +824,7 @@
             }, 300);
         });
 
-
+        // Modal functions
         function openModal(imageSrc) {
             const modal = document.getElementById("imageModal");
             const modalImg = document.getElementById("modalImage");
@@ -662,7 +838,92 @@
             document.body.classList.remove('modal-open');
         }
 
+        // Universal Carousel Class
+        class Carousel {
+            constructor(carouselId, prevBtnId, nextBtnId, indicatorsId, slidesPerView = 1) {
+                this.carousel = document.getElementById(carouselId);
+                this.prevBtn = document.getElementById(prevBtnId);
+                this.nextBtn = document.getElementById(nextBtnId);
+                this.indicatorsContainer = document.getElementById(indicatorsId);
+                this.cards = this.carousel.querySelectorAll('.carousel-card');
+                this.totalCards = this.cards.length;
+                this.currentIndex = 0;
+                this.slidesPerView = slidesPerView;
 
+                // Calculate total "pages"
+                this.totalPages = Math.ceil(this.totalCards / this.slidesPerView);
+
+                this.init();
+            }
+
+            init() {
+                // Create indicators
+                for (let i = 0; i < this.totalPages; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('carousel-dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    this.indicatorsContainer.appendChild(dot);
+                }
+
+                this.prevBtn.addEventListener('click', () => this.move(-1));
+                this.nextBtn.addEventListener('click', () => this.move(1));
+
+                window.addEventListener('resize', () => this.update());
+
+                this.update();
+            }
+
+            update() {
+                const cardWidth = this.cards[0].offsetWidth;
+                const gap = 30;
+                const moveWidth = (cardWidth + gap) * this.slidesPerView;
+
+                const offset = -(this.currentIndex * moveWidth);
+                this.carousel.style.transform = `translateX(${offset}px)`;
+
+                // Update indicators
+                const dots = this.indicatorsContainer.querySelectorAll('.carousel-dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentIndex);
+                });
+
+                this.prevBtn.disabled = this.currentIndex === 0;
+                this.nextBtn.disabled = this.currentIndex === this.totalPages - 1;
+            }
+
+            move(direction) {
+                this.currentIndex += direction;
+
+                if (this.currentIndex < 0) this.currentIndex = 0;
+                if (this.currentIndex >= this.totalPages) this.currentIndex = this.totalPages - 1;
+
+                this.update();
+            }
+
+            goToSlide(index) {
+                this.currentIndex = index;
+                this.update();
+            }
+        }
+
+        // Initialize all carousels after DOM is loaded
+        window.addEventListener('load', () => {
+            // Show 3 slides at a time
+            //new Carousel('booksCarousel', 'booksPrev', 'booksNext', 'booksIndicators', 2);
+            new Carousel('projectsCarousel', 'projectsPrev', 'projectsNext', 'projectsIndicators', 2);
+            // new Carousel('articlesCarousel', 'articlesPrev', 'articlesNext', 'articlesIndicators', 1);
+            // new Carousel('poemsCarousel', 'poemsPrev', 'poemsNext', 'poemsIndicators', 1);
+            new Carousel('booksCarousel', 'booksPrev', 'booksNext', 'booksIndicators', 1);
+
+            // Developer section carousels
+            // new Carousel('projectsCarousel', 'projectsPrev', 'projectsNext', 'projectsIndicators');
+
+            // // Writer section carousels
+            // new Carousel('articlesCarousel', 'articlesPrev', 'articlesNext', 'articlesIndicators');
+            // new Carousel('poemsCarousel', 'poemsPrev', 'poemsNext', 'poemsIndicators');
+            // new Carousel('booksCarousel', 'booksPrev', 'booksNext', 'booksIndicators');
+        });
     </script>
 </body>
 

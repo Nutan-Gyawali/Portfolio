@@ -620,3 +620,117 @@ body:not(.writer-theme) .card:hover {
     cursor: pointer;
     z-index: 1001;
 }
+
+@media (max-width: 768px) {
+    .experience-header {
+        flex-direction: column;
+    }
+
+    .experience-date {
+        align-self: flex-start;
+    }
+}
+
+/* Projects Carousel Styles */
+.projects-carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.projects-carousel {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+    padding: 0 10px;
+}
+
+.project-card {
+    min-width: 350px;
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card h3 {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.project-card p {
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+.project-card .item-link {
+    margin-top: auto;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.carousel-btn {
+    background: rgba(99, 102, 241, 0.1);
+    border: 2px solid #6366f1;
+    color: #6366f1;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: #6366f1;
+    color: white;
+    transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-btn:disabled:hover {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    transform: scale(1);
+}
+
+.carousel-indicators {
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(99, 102, 241, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: #6366f1;
+    width: 30px;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        min-width: 280px;
+        flex: 0 0 280px;
+    }
+}
